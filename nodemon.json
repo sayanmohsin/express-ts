@@ -1,0 +1,11 @@
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "ignore": ["src/**/*.spec.ts", "dist/"],
+    "exec": "dotenv -e .env.local -- npx ts-node -r tsconfig-paths/register ./src/app.ts",
+    "events": {
+        "restart": "npx kill-port 3030",
+        "crash": "npx kill-port 3030 -- npm run dev"
+    },
+    "delay": "1500"
+}
